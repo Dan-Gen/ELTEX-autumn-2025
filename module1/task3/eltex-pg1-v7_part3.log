@@ -1,0 +1,28 @@
+ls
+mkdir -p D1/D2/D3
+cd D1/D2
+touch file.txt
+vi file.txt
+Текст: "Генинг Даниил, 1 модуль 3 раздел"
+cat file.txt
+ln file.txt D3/hardlink.txt
+ln -s /home/eltex-pg1-v7/D1/D2/file.txt /home/eltex-pg1-v7/D1/D2/D3/softlink.txt
+cd D1/D2/D3
+cat hardlink.txt
+cat softlink.txt
+mv /home/eltex-pg1-v7/D1/D2/file.txt /home/eltex-pg1-v7/D1
+cd D1
+pwd
+ls
+cat file.txt
+cat hardlink.txt
+cat softlink.txt
+cd D1
+rm -r D2
+find / type f -size +20M 2>/dev/null
+du -h $(find / type f -size +20M 2>/dev/null) 2>/dev/null
+find / type f -size +20M 2>/dev/null > ${USER}_part3_gt50M.log
+find ~ -type f -mtime -1 -print
+which find
+file /usr/bin/find
+file -b /boot/initrd.img*
