@@ -1,0 +1,192 @@
+
+2025-10-19 21:15:54 - 1. Успешная регистрация на github.com.
+
+2025-10-19 21:17:03 - 2. Установка git и набор утилит для управления github из командной строки gh.
+
+Команда: ssh root@172.16.9.181 'apt update'
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:4 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:5 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,498 kB]
+Get:6 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [175 kB]
+Get:7 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:8 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,496 kB]
+Get:9 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [378 kB]
+Get:10 http://ru.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:11 http://ru.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7,140 B]
+Get:12 http://ru.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:13 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [11.0 kB]
+Get:14 http://ru.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Get:15 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+Get:16 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.3 kB]
+Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+Fetched 4,019 kB in 1s (2,715 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+83 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+Команда: ssh root@172.16.9.181 'apt install git gh'
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+git set to manually installed.
+The following NEW packages will be installed:
+  gh
+0 upgraded, 1 newly installed, 0 to remove and 83 not upgraded.
+Need to get 8,836 kB of archives.
+After this operation, 45.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 gh amd64 2.45.0-1ubuntu0.3 [8,836 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 8,836 kB in 1s (8,491 kB/s)
+Selecting previously unselected package gh.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 124979 files and directories currently installed.)
+Preparing to unpack .../gh_2.45.0-1ubuntu0.3_amd64.deb ...
+Unpacking gh (2.45.0-1ubuntu0.3) ...
+Setting up gh (2.45.0-1ubuntu0.3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+
+Restarting services...
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+Pending kernel upgrade
+----------------------
+
+Newer kernel available
+
+The currently running kernel version is 6.8.0-55-generic which is not the 
+expected kernel version 6.8.0-85-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, 
+so you should consider rebooting.
+
+
+
+2025-10-19 22:18:02 - 3. Установить параметры git.
+Команда: ssh root@172.16.9.181 'git config --global user.name "Dan-Gen"'
+
+Команда: ssh root@172.16.9.181 'git config --global user.email "gening05@inbox.ru"'
+
+Команда: ssh root@172.16.9.181 'git config --global init.defaultBranch main'
+
+
+2025-10-19 22:30:33 - 4. Создать ключ ssh.
+Команда: ssh root@172.16.9.181 'ssh-keygen -t ed25519 -f ~/.ssh/Dan-Gen'
+Enter passphrase (empty for no passphrase): Enter same passphrase again: Generating public/private ed25519 key pair.
+Your identification has been saved in /root/.ssh/Dan-Gen
+Your public key has been saved in /root/.ssh/Dan-Gen.pub
+The key fingerprint is:
+SHA256:uPeN8m2BZfNPqjzPTP9QufEhfRlFXRuSr8jPMboStPQ root@eltex-practice2-pg1-v7
+The key's randomart image is:
++--[ED25519 256]--+
+|             ..o*|
+|             .. =|
+|              .o |
+|       . o  + ..+|
+|      . S ++.+.*o|
+|       . o.E.+o.B|
+|      . . . +.==.|
+|       ..o *o*.o.|
+|         o=o*++ +|
++----[SHA256]-----+
+
+
+2025-10-19 22:56:17 - 5. Подключить компьютер к github.
+Команда: ssh root@172.16.9.181 'gh auth login'
+
+! First copy your one-time code: E238-DF96
+Open this URL to continue in your web browser: https://github.com/login/device
+✓ Authentication complete.
+! Authentication credentials saved in plain text
+✓ Logged in as Dan-Gen
+
+2025-10-19 23:06:46 - 6. Указать автоматическую авторизацию только для сайта github.com.
+Команда: ssh root@172.16.9.181 'gh auth setup-git --hostname github.com'
+
+2025-10-19 23:19:16 - 7. Убедиться, что все создано. 
+Команда: ssh root@172.16.9.181 'gh auth status'
+github.com
+  ✓ Logged in to github.com account Dan-Gen (/root/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: ssh
+  - Token: gho_************************************
+  - Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+
+
+2025-10-19 23:40:48 - 8. Создать репозиторий на сервере github.
+Команда: ssh root@172.16.9.181 'gh repo create --public ELTEX-autumn-2025'
+
+2025-10-19 23:41:32 - 9. Наполнение репозитория.
+Команда: ssh root@172.16.9.181 'mkdir ~/ELTEX-autumn-2025 && cd ~/ELTEX-autumn-2025'
+'git init'
+'git add README.md'
+'git commit -m "first commit"'
+'git branch -M main'
+'git remote add origin https://github.com/Dan-Gen/ELTEX-autumun-2025.git'
+
+Команда: ssh root@172.16.9.181 'cd ~/ELTEX-autumn-2025 && git status'
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+'git push -u origin main'
+'mkdir -p module1/task1'
+'mkdir module1/task2'
+'mkdir module1/task3'
+'scp /home/eltex-pg1-v7/eltex-pg1-v7_part.log root@172.16.9.181:/root/ELTEX-autumn-2025/module1/task2'
+'scp /home/eltex-pg1-v7/eltex-pg1-v7_part3.log root@172.16.9.181:/root/ELTEX-autumn-2025/module1/task3'
+'scp /home/eltex-pg1-v7/eltex-pg1-v7_part3_gt50M.log root@172.16.9.181:/root/ELTEX-autumn-2025/module1/task3'
+'scp /home/eltex-pg1-v7/report_part1.txt root@172.16.9.181:/root/ELTEX-autumn-2025/module1/task1'
+'git add .'
+'git status'
+'git commit -m "module1 task1,2,3"'
+'git push'
+
+
+2025-10-20 00:09:13 - 10. Клонирование репозитория.
+Команда: ssh root@172.16.9.181 'mkdir ~/ELTEX-autumn-2025-clone && cd ~/ELTEX-autumn-2025-clone'
+'git clone https://github.com/Dan-Gen/ELTEX-autumn-2025.git .'
+
+2025-10-20 00:28:22 - 11. Внести изменения в основном каталоге и в каталоге с клоном.
+Команда: ssh root@172.16.9.181 'cd ~/ELTEX-autumn-2025-clone && git fetch'
+'git log origin/main'
+'git diff main origin/main'
+'git merge'
+
+2025-10-20 19:36:59 - 12. Оформление 2 практики.
+
+cp /var/log/custom_logs/practice2_eltex-pg1-v7_part1.log /root/ELTEX-autumn-2025/module1/task2
+cp /var/log/custom_logs/practice2_eltex-pg1-v7_part2.log /root/ELTEX-autumn-2025/module1/task2
+cp /var/log/custom_logs/practice2_eltex-pg1-v7_part3.log /root/ELTEX-autumn-2025/module1/task2
